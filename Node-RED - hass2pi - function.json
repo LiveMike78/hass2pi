@@ -1,0 +1,22 @@
+[
+    {
+        "id": "faab3d5ae74dfd58",
+        "type": "function",
+        "z": "9568dd13ebbe3689",
+        "name": "hass2mqtt",
+        "func": "// topic is used for stream id\nmsg.topic = \"hass2pi/\" + msg.payload.event.entity_id.split(\".\")[1] + \"/\" + msg.payload.event.entity_id.split(\".\")[0];\n\n// by default, an entity has a state\nvar metric = \"state\";\n\n// if the entity has a device class, that is assumed as the state name\nif (msg.payload.event.new_state.attributes.device_class != null) {\n    metric = msg.payload.event.new_state.attributes.device_class\n}\n\n// get the latest measurement\nconst measurement = msg.payload.event.new_state.state;\nconst attributes = msg.payload.event.new_state.attributes;\n\nvar new_payload = attributes;\n\nif (msg.payload.event.entity_id.startsWith(\"input_datetime.\") | msg.payload.event.entity_id.startsWith(\"datetime.\")) {\n    // handle datetime measurements by converting to ISO standard format\n\n    // create a date object from the measurement\n    const inputDate = new Date(measurement);\n   \n    // convert to ISO\n    new_payload[metric] = inputDate.toISOString();\n}\nelse {\n\n    new_payload[metric] = measurement;\n}\n\nmsg.payload = new_payload;\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 490,
+        "y": 60,
+        "wires": [
+            [
+                "27b1fd92946a79e4"
+            ]
+        ]
+    }
+]
