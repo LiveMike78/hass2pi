@@ -1,0 +1,315 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AF xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="OSIsoft.AF.xsd" SchemaVersion="2.0" SoftwareVersion="3.1.0.1156" ExportMode="NoUniqueID, SimplifiedConfigStrings" PISystem="ZOIDBERG" Created="2024-12-03T11:06:57.9021788Z" ExportedObject="NamedCollectionList" ExportedType="AFNamedCollectionList`1" Identity="EnumerationSet">
+  <AFEnumerationSet>
+    <Name>binary_sensor</Name>
+    <Description>Generic on/off</Description>
+    <AFEnumerationValue>
+      <Name>Off</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>On</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.battery</Name>
+    <Description>on means low, off means normal</Description>
+    <AFEnumerationValue>
+      <Name>Low</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Normal</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.battery_charging</Name>
+    <Description>on means charging, off means not charging</Description>
+    <AFEnumerationValue>
+      <Name>Charging</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Not Charging</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.cold</Name>
+    <Description>on means cold, off means normal</Description>
+    <AFEnumerationValue>
+      <Name>Cold</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Normal</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.connectivity</Name>
+    <Description>on means connected, off means disconnected</Description>
+    <AFEnumerationValue>
+      <Name>Connected</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Disconnected</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.door</Name>
+    <Description>on means open, off means closed</Description>
+    <AFEnumerationValue>
+      <Name>Closed</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Open</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.door (invert)</Name>
+    <Description>on means open, off means closed</Description>
+    <AFEnumerationValue>
+      <Name>Closed</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Open</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.garage_door</Name>
+    <Description>on means open, off means closed</Description>
+    <AFEnumerationValue>
+      <Name>Closed</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Open</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.gas</Name>
+    <Description>on means gas detected, off means no gas (clear)</Description>
+    <AFEnumerationValue>
+      <Name>Gas Detected</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>No Gas (Clear)</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.heat</Name>
+    <Description>on means hot, off means normal</Description>
+    <AFEnumerationValue>
+      <Name>Hot</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Normal</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.light</Name>
+    <Description>on means light detected, off means no light</Description>
+    <AFEnumerationValue>
+      <Name>Light Detected</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>No Light</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.lock</Name>
+    <Description>on means open (unlocked), off means closed (locked)</Description>
+    <AFEnumerationValue>
+      <Name>Locked</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Unlocked</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.moisture</Name>
+    <Description>on means moisture detected (wet), off means no moisture (dry)</Description>
+    <AFEnumerationValue>
+      <Name>Moisture Detected (Wet)</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>No Moisture (Dry)</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.motion</Name>
+    <Description>on means motion detected, off means no motion (clear)</Description>
+    <AFEnumerationValue>
+      <Name>Motion Detected</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>No Motion (Clear)</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.moving</Name>
+    <Description>on means moving, off means not moving (stopped)</Description>
+    <AFEnumerationValue>
+      <Name>Moving</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Not Moving (Stopped)</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.occupancy</Name>
+    <Description>on means occupied, off means not occupied (clear)</Description>
+    <AFEnumerationValue>
+      <Name>Not Occupied (Clear)</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Occupied</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.opening</Name>
+    <Description>on means open, off means closed</Description>
+    <AFEnumerationValue>
+      <Name>Closed</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Open</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.plug</Name>
+    <Description>on means device is plugged in, off means device is unplugged</Description>
+    <AFEnumerationValue>
+      <Name>Plugged In</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Unplugged</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.power</Name>
+    <Description>on means power detected, off means no power</Description>
+    <AFEnumerationValue>
+      <Name>No Power</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Power Detected</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.presence</Name>
+    <Description>on means home, off means away</Description>
+    <AFEnumerationValue>
+      <Name>Away</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Home</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.problem</Name>
+    <Description>on means problem detected, off means no problem (OK)</Description>
+    <AFEnumerationValue>
+      <Name>No Problem (OK)</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Problem Detected</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.running</Name>
+    <Description>on means running, off means not running</Description>
+    <AFEnumerationValue>
+      <Name>Not Running</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Running</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.safety</Name>
+    <Description>on means unsafe, off means safe</Description>
+    <AFEnumerationValue>
+      <Name>Safe</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Unsafe</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.smoke</Name>
+    <Description>on means smoke detected, off means no smoke (clear)</Description>
+    <AFEnumerationValue>
+      <Name>No Sound (Clear)</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Sound Detected</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.vibration</Name>
+    <Description>on means vibration detected, off means no vibration (clear)</Description>
+    <AFEnumerationValue>
+      <Name>No Vibration (Clear)</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Vibration Detected</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+  <AFEnumerationSet>
+    <Name>binary_sensor.window</Name>
+    <Description>on means open, off means closed</Description>
+    <AFEnumerationValue>
+      <Name>Closed</Name>
+      <Value>0</Value>
+    </AFEnumerationValue>
+    <AFEnumerationValue>
+      <Name>Open</Name>
+      <Value>1</Value>
+    </AFEnumerationValue>
+  </AFEnumerationSet>
+</AF>
