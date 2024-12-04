@@ -1,20 +1,21 @@
 [
     {
-        "id": "faab3d5ae74dfd58",
+        "id": "5e6ba2baf1169812",
         "type": "function",
         "z": "9568dd13ebbe3689",
         "name": "hass2mqtt",
-        "func": "// topic is used for stream id\nmsg.topic = \"hass2pi/\" + msg.payload.event.entity_id.split(\".\")[1] + \"/\" + msg.payload.event.entity_id.split(\".\")[0];\n\n// by default, an entity has a state\nvar metric = \"state\";\n\n// if the entity has a device class, that is assumed as the state name\nif (msg.payload.event.new_state.attributes.device_class != null) {\n    metric = msg.payload.event.new_state.attributes.device_class\n}\n\n// get the latest measurement\nconst measurement = msg.payload.event.new_state.state;\nconst attributes = msg.payload.event.new_state.attributes;\n\nvar new_payload = attributes;\n\nif (msg.payload.event.entity_id.startsWith(\"input_datetime.\") | msg.payload.event.entity_id.startsWith(\"datetime.\")) {\n    // handle datetime measurements by converting to ISO standard format\n\n    // create a date object from the measurement\n    const inputDate = new Date(measurement);\n   \n    // convert to ISO\n    new_payload[metric] = inputDate.toISOString();\n}\nelse {\n\n    new_payload[metric] = measurement;\n}\n\nmsg.payload = new_payload;\n\nreturn msg;",
+        "func": "function processHomeAssistantEvent(msg) {\n    try {\n        // Validate input\n        if (!msg || !msg.payload || !msg.payload.event || !msg.payload.event.entity_id) {\n            throw new Error('Invalid message structure');\n        }\n\n        // Generate topic more efficiently\n        const entityParts = msg.payload.event.entity_id.split('.');\n        if (entityParts.length < 2) {\n            throw new Error('Invalid entity_id format');\n        }\n        msg.topic = `hass2pi/${entityParts[1]}/${entityParts[0]}`;\n\n        // Determine metric name (state or device class)\n        const newState = msg.payload.event.new_state;\n        if (!newState) {\n            throw new Error('No new state available');\n        }\n\n        // Default to 'state' if no device class\n        const metric = newState.attributes?.device_class || 'state';\n\n        // Extract measurement and attributes\n        const measurement = newState.state;\n        const attributes = {...newState.attributes};\n\n        // Handle datetime entities specifically\n        const datetimeEntities = ['input_datetime.', 'datetime.'];\n        if (datetimeEntities.some(prefix => msg.payload.event.entity_id.startsWith(prefix))) {\n            try {\n                const inputDate = new Date(measurement);\n                // Validate date is valid\n                if (isNaN(inputDate.getTime())) {\n                    throw new Error('Invalid date format');\n                }\n                attributes[metric] = inputDate.toISOString();\n            } catch (dateError) {\n                // Fallback to original measurement if date parsing fails\n                attributes[metric] = measurement;\n                console.warn(`Date parsing error: ${dateError.message}`);\n            }\n        } else {\n            attributes[metric] = measurement;\n        }\n\n        // Update payload\n        msg.payload = attributes;\n\n        return msg;\n    } catch (error) {\n        // Comprehensive error handling\n        console.error(`Error processing Home Assistant event: ${error.message}`);\n        // Optionally, you can modify the message to include error information\n        msg.error = error.message;\n        return msg;\n    }\n}\n\nreturn processHomeAssistantEvent(msg);",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 490,
-        "y": 60,
+        "x": 350,
+        "y": 160,
         "wires": [
             [
+                "e8b27fdbcda13be6",
                 "27b1fd92946a79e4"
             ]
         ]
